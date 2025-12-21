@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Background */
+body{
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #4eb2dd, #20432d, #2c5364);
+  animation: bgMove 10s infinite alternate;
+}
+
+/* Background animation */
+@keyframes bgMove {
+  0% { background-position: left; }
+  100% { background-position: right; }
+}
+
+/* Container */
+.container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* Message Card */
+.message{
+  width: 400px;
+  padding: 25px;
+  height: auto;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 15px;
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.3);
+  transition: all 0.5s ease;
+}
+
+.message:hover{
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 0 40px rgba(0, 255, 255, 0.6);
+}
+
+/* Heading */
+.message h3{
+  color: #fff;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow{
+  from { text-shadow: 0 0 5px cyan; }
+  to { text-shadow: 0 0 20px cyan; }
+}
+
+/* Label */
+label{
+  color: #dff9fb;
+  font-size: 14px;
+}
+
+/* Input + Icon Button */
+.message p{
+  margin-top: 15px;
+}
+
+.message button:first-of-type{
+  background: #00cec9;
+  border: none;
+  padding: 10px 14px;
+  color: #000;
+  transition: 0.4s;
+}
+
+.message button:first-of-type:hover{
+  background: #81ecec;
+  transform: rotate(360deg);
+}
+
+/* Input */
+#message-input{
+  width: 80%;
+  padding: 10px;
+  border: none;
+  outline: none;
+  border-radius: 0 5px 5px 0;
+  transition: all 0.4s ease;
+}
+
+#message-input:focus{
+  box-shadow: 0 0 15px #00cec9;
+  transform: scale(1.05);
+}
+
+/* Submit Button */
+.message button[onclick]{
+  margin-top: 15px;
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(45deg, #00cec9, #0984e3);
+  color: white;
+  font-weight: bold;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.message button[onclick]:hover{
+  background: linear-gradient(45deg, #0984e3, #00cec9);
+  box-shadow: 0 0 25px #00cec9;
+  transform: scale(1.05);
+}
+
+/* Output Message */
+#message-output{
+  margin-top: 20px;
+  color: #ffeaa7;
+  font-weight: bold;
+  letter-spacing: 2px;
+  animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn{
+  from{
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
